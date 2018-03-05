@@ -27,7 +27,7 @@ export class PreviewComponent implements OnInit {
     });
   }
   getMasterIndex(template: Template): string {
-    let t = 'assets/a2sample/templates/' + template.name + '/index.html';
+    let t = 'assets/template/' + template.name + '/index.html';
     return t;
   }
   getParentUrl() {

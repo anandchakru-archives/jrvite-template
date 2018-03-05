@@ -16,8 +16,9 @@ export class GithubService {
     });
   }
   fetchTemplates(): Observable<any> {
+    //Note: list all repos - https://api.github.com/users/anandchakru/repos
     if (!this.templateListSub.observers.length) { //if template not fetched, fetch them
-      return this.http.get('https://api.github.com/repositories/82734860/contents/templates').map((res) => {
+      return this.http.get('https://api.github.com/repositories/123986028/contents/templates').map((res) => {
         return res.json();
       }).catch((error: any) => {
         console.log(JSON.stringify(error));

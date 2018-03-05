@@ -1,0 +1,21 @@
+.container{
+    background-color: #fff;
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+#title{
+    font-family: Pacifico;
+}
+#hostName{
+    font-family: 'Walter Turncoat';
+    color: #ccc;
+}
+.spacer{
+    padding: 25px 0;
+}
+.jumbotron{
+  background-color:transparent !important;
+}
+p, span, #inviteNote, #inviteNote *{
+  font-family: Comfortaa;
+  font-size: 18px;
+}
