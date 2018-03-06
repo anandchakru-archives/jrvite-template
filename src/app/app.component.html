@@ -1,17 +1,40 @@
-<div class="previewer">
-  <app-preview></app-preview>
-</div>
-<!-- <div class="row">
-  <div class="col">
-    <h4>Choose a Template to preview:</h4>
-    <button *ngFor="let template of templates" class="btn btn-sm btn-info" (click)="selectedTemplate = template" [class.active]="template.name===selectedTemplate?.name">{{template.name}}</button>
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="modal" href="#thumbs" aria-expanded="false" data-target="#thumbs" aria-parent="#parent"
+      [class.active]="activeSection==='thumbs'">Templates</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="collapse" href="#details" aria-expanded="false" data-target="#details" aria-parent="#parent"
+      [class.active]="activeSection==='details'">Details</a>
+  </li>
+</ul>
+<div class="parent" id="parent">
+  <div id="previewer">
+    <app-preview [templates]="templates" [details]="details" [selectedTemplate]="selectedTemplate"></app-preview>
   </div>
 </div>
-<div class="row">
-  <div id="preview" class="col">
-    <h4>Preview:
-      <span class="small">{{selectedTemplate?.name}}</span>
-    </h4>
-    <iframe #ifr *ngIf="selectedTemplate" id="ifr" [src]="getMasterIndex(selectedTemplate) | safy" frameborder="0"></iframe>
+
+
+<div id="thumbs" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="thumbs" aria-hidden="true">
+  <div class="modal-dialog fullscreen">
+    <div class="modal-content fullscreen">
+      <div class="modal-header">
+        <h4>Select Template</h4>
+        <button #closeThumb type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-thumbnail *ngIf="templates.length>0" [templates]="templates" [selectedTemplate]="selectedTemplate" (onChangeTemplate)="changeTemplate($event)"></app-thumbnail>
+      </div>
+    </div>
   </div>
-</div> -->
+</div>
+
+<!-- <div id="thumbs" class="collapse" data-parent="#parent" *ngIf="templates?.length>0">
+    <app-thumbnail [templates]="templates" [selectedTemplate]="selectedTemplate" (onChangeTemplate)="changeTemplate($event)"></app-thumbnail>
+  </div> -->
+
+<div id="details" class="collapse" data-parent="#parent">
+  <app-details [details]="details" (onDetailsUpdate)="updateDetails($event)"></app-details>
+</div>

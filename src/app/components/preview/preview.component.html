@@ -1,1 +1,1 @@
-<iframe #ifr *ngIf="selectedTemplate" id="ifr" [src]="getMasterIndex(selectedTemplate) | safy" frameborder="0"></iframe>
+<iframe #ifr *ngIf="selectedTemplate" id="ifr" [src]="pathService.getIndex(selectedTemplate) | safy" frameborder="0"></iframe>

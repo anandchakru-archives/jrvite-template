@@ -17,6 +17,18 @@
   <div class="container">
     <app-root></app-root>
   </div>
+  <!-- relay bootstrap events to angular - start -->
+  <script>
+    function eventRelay(bs_event) {
+      $('body').on(bs_event, function ($event) {
+        const customEvent = document.createEvent('Event');
+        customEvent.initEvent(bs_event, true, true);
+        let target_id = '#' + $event.target.id;
+        $(target_id)[0].dispatchEvent(customEvent);
+      });
+    }
+  </script>
+  <!-- relay bootstrap events to angular - end -->
 </body>
 
 </html>
