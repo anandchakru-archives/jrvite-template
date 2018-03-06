@@ -10,17 +10,19 @@ body {
   box-shadow: 0 0 0 1px #f13c20, 1px 1px 6px 4px #727272;
   border-radius: 50px 0 50px 0;
 	text-align: center;
+	padding-bottom: 50px;
 }
 #title {
   color: #efe2ba;
   font-family: "Alegreya";
 }
 .caption {
-  margin: 0;
+	margin: 0;
+	color: #134613;
 	font-size: 9vw;
 	font-family: "Merienda", "Serif";
   font-weight: bolder;
-	animation: loadin 2s 1 linear;
+	animation: loadin 4s infinite linear 1.5s;
 }
 #hostName {
   color: #efe2ba;
@@ -37,10 +39,14 @@ span,
   padding: 25px 0;
 }
 @keyframes loadin {
-	from {
-		color: #f13c20;
+	0% {
+		color: #134613;
 	}
-	to {
+	50% {
+		color: #000;
+		text-shadow: 2px 2px 5px #efe2ba;
+	}
+	100% {
 		color: #134613;
 	}
 }
