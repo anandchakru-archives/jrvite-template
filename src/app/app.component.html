@@ -1,21 +1,15 @@
 <ul class="nav nav-pills">
   <li class="nav-item">
-    <a class="nav-link" data-toggle="modal" href="#thumbs" aria-expanded="false" data-target="#thumbs" aria-parent="#parent"
-      [class.active]="activeSection==='thumbs'">Templates</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" data-toggle="collapse" href="#details" aria-expanded="false" data-target="#details" aria-parent="#parent"
-      [class.active]="activeSection==='details'">Details</a>
+    <a class="nav-link" data-toggle="modal" href="#thumbs" data-target="#thumbs" [class.active]="activeSection==='thumbs'">Templates</a>
   </li>
 </ul>
-<div class="parent" id="parent">
-  <div id="previewer">
-    <app-preview [templates]="templates" [details]="details" [selectedTemplate]="selectedTemplate"></app-preview>
-  </div>
+<div id="previewer">
+  <app-preview [templates]="templates" [details]="details" [selectedTemplate]="selectedTemplate"></app-preview>
 </div>
 
-
-<div id="thumbs" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="thumbs" aria-hidden="true">
+<!-- Thumbs modal -->
+<div id="thumbs" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="thumbs" aria-hidden="true" data-backdrop="static"
+  data-keyboard="false">
   <div class="modal-dialog fullscreen">
     <div class="modal-content fullscreen">
       <div class="modal-header">
@@ -29,12 +23,4 @@
       </div>
     </div>
   </div>
-</div>
-
-<!-- <div id="thumbs" class="collapse" data-parent="#parent" *ngIf="templates?.length>0">
-    <app-thumbnail [templates]="templates" [selectedTemplate]="selectedTemplate" (onChangeTemplate)="changeTemplate($event)"></app-thumbnail>
-  </div> -->
-
-<div id="details" class="collapse" data-parent="#parent">
-  <app-details [details]="details" (onDetailsUpdate)="updateDetails($event)"></app-details>
 </div>

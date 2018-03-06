@@ -1,9 +1,3 @@
-
-@font-face {
-	font-family:'Decovar';
-	src:url('../../shared/fonts/Decovar-VF.ttf'); /* in google drive @ https://drive.google.com/open?id=1P2mO9c5yEsXxDbxPJb8Fflqc8VAO5g_B*/
-}
-
 body {
   padding: 10px;
 }
@@ -24,12 +18,10 @@ body {
 .caption {
   margin: 0;
 	font-size: 9vw;
-	font-family: "Decovar";
+	font-family: "Decovar", "Alegreya";
   font-weight: bolder;
-	color: white; 
 	
-	font-variation-settings: 'SSTR' 0;
-	animation: loadin 3s 1 linear;
+	animation: loadin 2s 1 linear;
   
 	display: flex;
 	align-items: center;
@@ -56,9 +48,9 @@ span,
 }
 @keyframes loadin {
 	from {
-		font-variation-settings: 'SSTR' 1000;
+		color: #f13c20;
 	}
 	to {
-		font-variation-settings: 'SSTR' 0;
+		color: #134613;
 	}
 }

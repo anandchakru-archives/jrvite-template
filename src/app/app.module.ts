@@ -9,15 +9,13 @@ import { AppComponent } from './app.component';
 import { SafyPipe } from './pipe/safy.pipe';
 import { PreviewComponent } from './components/preview/preview.component';
 import { ThumbnailComponent } from './components/thumbnail/thumbnail.component';
-import { DetailsComponent } from './components/details/details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SafyPipe,
     PreviewComponent,
-    ThumbnailComponent,
-    DetailsComponent
+    ThumbnailComponent
   ],
   imports: [
     BrowserModule,
