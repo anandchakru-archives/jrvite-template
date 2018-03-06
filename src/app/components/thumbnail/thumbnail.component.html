@@ -1,17 +1,16 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4" *ngFor="let template of templates; let indx1 = index;">
-      <div class="card mb-4 box-shadow">
+      <div class="card mb-4" [class.border-primary]="template.name===selectedTemplate.name">
         <img class="card-img-top pointer highlightable" [src]="pathService.getThumb(template)" alt="Card image cap" (click)="selectTemplate(template)">
         <div class="card-body">
-          <h5 class="text-capitalize">{{template.name}}</h5>
+          <h5 class="card-title text-capitalize">{{template.name}}</h5>
           <p class="card-text">The description goes here.</p>
           <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
               <button type="button" class="btn btn-sm btn-outline-secondary" (click)="selectTemplate(template)">Select</button>
-              <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
             </div>
-            <small class="text-muted"></small>
+            <small class="text-muted" [class.font-weight-bold]="template.name===selectedTemplate.name">{{(indx1 + 1)}}</small>
           </div>
         </div>
       </div>

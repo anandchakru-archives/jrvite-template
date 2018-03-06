@@ -3,8 +3,9 @@
   }
 #mcontainer{
     background-color: #363636;
+    border-radius: 5px;
 }
-#title{
+#title, #hostName{
     color: #E8175D;
     font-family: 'Roboto';
 }

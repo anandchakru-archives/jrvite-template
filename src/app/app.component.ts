@@ -42,8 +42,8 @@ export class AppComponent implements OnInit, OnDestroy {
         inviteNote: marked(
           "## Party time!\nBalloons go up, candles blow *out*,\nkids all around jump and *shout*\nThe date draws near and we want you *hear*,\nto celebrate Someone's 4th *year*!"
         ),
-        //photos: [{ url: "https://picsum.photos/1200/630/?random" }]
-        photos: [{ url: "http://lorempixel.com/g/400/200" }]
+        photos: [{ url: "https://picsum.photos/1200/630/?random" }]
+        //photos: [{ url: "http://lorempixel.com/g/400/200" }]
       }
     };
   }
@@ -52,7 +52,7 @@ export class AppComponent implements OnInit, OnDestroy {
       this.templates = rsp;
       this.route.queryParams.subscribe(params => {
         let selectedTemplateIndx = params['templateName'] || '0';
-        this.selectedTemplate = this.templates[selectedTemplateIndx];
+        this.selectedTemplate = this.templates[selectedTemplateIndx] || this.templates[0];
       });
     });
     this.onCllapsibleShownSubject = this.bsEventsService.onCollapsibleShown().subscribe((event: any) => {
