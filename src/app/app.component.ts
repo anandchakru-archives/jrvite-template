@@ -5,6 +5,7 @@ import { GithubService } from './service/github.service';
 import { Template } from './models/template';
 import { Component, OnInit, OnDestroy, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { isDevMode } from '@angular/core';
 import * as jquery from 'jquery';
 import * as Mustache from 'mustache';
@@ -26,7 +27,9 @@ export class AppComponent implements OnInit, OnDestroy {
   activeSection: string = 'preview';//thumbs|details
 
   @ViewChild('closeThumb') closeThumb: ElementRef;
-  constructor(private ghService: GithubService, private bsEventsService: BsEventsService) {
+  constructor(private ghService: GithubService,
+    private route: ActivatedRoute,
+    private bsEventsService: BsEventsService) {
     marked.setOptions({ breaks: true });
     this.details = {
       invite: {
@@ -47,7 +50,10 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.ghService.templateListSub.subscribe((rsp: Template[]) => {
       this.templates = rsp;
-      this.selectedTemplate = this.templates[0];
+      this.route.queryParams.subscribe(params => {
+        let selectedTemplateIndx = params['templateName'] || '0';
+        this.selectedTemplate = this.templates[selectedTemplateIndx];
+      });
     });
     this.onCllapsibleShownSubject = this.bsEventsService.onCollapsibleShown().subscribe((event: any) => {
       this.activeSection = event.target.id;

@@ -9,6 +9,9 @@ import { AppComponent } from './app.component';
 import { SafyPipe } from './pipe/safy.pipe';
 import { PreviewComponent } from './components/preview/preview.component';
 import { ThumbnailComponent } from './components/thumbnail/thumbnail.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const AppRoutes: Routes = [];
 
 @NgModule({
   declarations: [
@@ -18,6 +21,7 @@ import { ThumbnailComponent } from './components/thumbnail/thumbnail.component';
     ThumbnailComponent
   ],
   imports: [
+    RouterModule.forRoot(AppRoutes),
     BrowserModule,
     FormsModule,
     HttpModule

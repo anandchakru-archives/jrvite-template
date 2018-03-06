@@ -10,7 +10,6 @@ import { Component, OnInit, HostListener, ViewChild, ElementRef, Input } from '@
   styleUrls: ['./preview.component.scss']
 })
 export class PreviewComponent implements OnInit {
-  @Input() templates: Template[] = [];
   @Input() selectedTemplate: Template;
   @Input() details: any = {};
   @ViewChild('ifr') ifr: ElementRef;
