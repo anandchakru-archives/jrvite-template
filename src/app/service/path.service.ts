@@ -10,14 +10,15 @@ import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class PathService {
+  private token: string = '?' + new Date().getTime();
   constructor(private http: Http) { }
   getIndex(template: Template): string {
-    let t = 'assets/template/' + template.name + '/index.html';
+    let t = 'assets/template/' + template.name + '/index.html' + this.token;
     return t;
   }
 
   getThumb(template: Template): string {
-    let t = 'assets/template/' + template.name + '/ss.png';
+    let t = 'assets/template/' + template.name + '/ss.png' + this.token;
     return t;
   }
 

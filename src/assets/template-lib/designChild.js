@@ -37,7 +37,6 @@
     var designChild = {}; // Object for public APIs
     var supports = !!document.querySelector && !!root.addEventListener; // Feature test
     var settings, eventTimeout;
-    var head = document.getElementsByTagName('head')[0];
 
     // Default settings
     var defaults = {
@@ -45,6 +44,20 @@
         parentUrl: '',
         messageIdFromParent: 'processed',
         initClass: 'design-child',
+        head: document.getElementsByTagName('head')[0],
+        cssElem: document.getElementById('css-default-style-99278'),
+        loadStyles(settings) {
+            if (!settings.cssElem) {
+                var head = document.getElementsByTagName('head')[0];
+                var link = document.createElement('link');
+                link.id = 'css-default-style';
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = './style.css?' + new Date().getTime();
+                link.media = 'all';
+                head.appendChild(link);
+            }
+        },
         getDesignTemplate: function () {
             return document.getElementById("template").innerHTML
         },
@@ -183,6 +196,9 @@
 
         // Add class to HTML element to activate conditional CSS
         document.documentElement.classList.add(settings.initClass);
+
+        // load & add style.css
+        settings.loadStyles.bind(this, [settings])();
 
         // Callback before Processing Template
         template = settings.getDesignTemplate.bind(this, [settings])();

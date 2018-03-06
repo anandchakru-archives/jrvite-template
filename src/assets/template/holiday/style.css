@@ -22,13 +22,12 @@ p, span, #inviteNote, #inviteNote *{
 .spacer{
     padding: 25px 0;
 }
-
 .art:before{
     content: ' ';
     border: 1px solid #fff;
     height: 100px;
     position: relative;
-    top: -115px;
+    top: -100px;
     display: inline-table;
 }
 .art {

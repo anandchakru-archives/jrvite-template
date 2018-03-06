@@ -2,6 +2,10 @@
 body, html{
     margin: 0; padding: 0; height: 100%; overflow: hidden;
 }
+
+.pointer{
+    cursor: pointer;
+}
 /*full screen modal - start */
 
 /*https://stackoverflow.com/a/18522320/234110 */
@@ -23,3 +27,13 @@ body, html{
 
 
 /*full screen modal - end */
+
+/* highlightable - start */
+.highlightable{
+    transition: all .2s ease-in-out;
+    transform: scale(0.9);
+}
+.highlightable:hover{
+    transform: scale(1);
+}
+/* highlightable - end */

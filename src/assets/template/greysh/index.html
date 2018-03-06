@@ -8,8 +8,6 @@
 
     <script src="../../template-lib/designChild.js"></script>
 
-    <link rel="stylesheet" href="style.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Satisfy|Roboto|Permanent+Marker">
 
@@ -84,15 +82,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
 
     <script>
-        designChild.init({
-            callbackAfterProcessing: function () {
-                $(document).ready(function () {
-                    $('#designWrap').fullpage({
-                        sectionsColor: ['#F15A5A', '#F0C419', '#4EBA6F', '#2D95BF', '#955BA5']
-                    });
-                });
-            }
-        });
+        designChild.init();
     </script>
 </body>
 
