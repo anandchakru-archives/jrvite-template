@@ -1,0 +1,99 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Greysh</title>
+
+    <script src="../../template-lib/designChild.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Satisfy|Roboto|Permanent+Marker">
+
+</head>
+
+<body>
+    <div id="designWrap" style="transition: opacity 2s; opacity: 0;display:none;">loading...</div>
+    <script id="template" type="text/template">
+        <div class="container">
+            <section class="section">
+                <div class="container has-text-centered" id="mcontainer">
+                    <div class="content is-large">
+                        <h2 id="caption">{{#invite.shortMsg}}{{invite.shortMsg}}{{/invite.shortMsg}}{{^invite.shortMsg}}You are invited{{/invite.shortMsg}}</h2>
+                        <h1 class="title editable" id="title">
+                            {{invite.title}}
+                        </h1>
+                        <h4 class="subtitle">
+                            <div id="hostName" class="editable">{{invite.hostName}}</div>
+                        </h4>
+                    </div>
+                    <figure class="image">
+                        {{#invite.photos.0}}
+                        <img class="photo" src="{{invite.photos.0.url}}"> {{/invite.photos.0}}
+                    </figure>
+                    <p>&nbsp;</p>
+                    <div class="box editable" id="addrText">
+                        <article class="media">
+                            <div class="media-left">
+                                <i class="fas fa-4x fa-map-marker-alt"></i>
+                            </div>
+                            <div class="media-content">
+                                <div class="content">
+                                    <p>
+                                        {{invite.addrText}}
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="box editable" id="timeFrom">
+                        <article class="media">
+                            <div class="media-left">
+                                <i class="fas fa-4x fa-clock"></i>
+                            </div>
+                            <div class="media-content">
+                                <div class="content">
+                                    <p>
+                                        {{invite.timeFromStr}} {{#invite.timeToStr}}
+                                        <span> to </span> {{invite.timeToStr}} {{/invite.timeToStr}}
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="box editable" id="inviteNote">
+                        <article class="media">
+                            <div class="media-left">
+                                <i class="fas fa-4x fa-envelope"></i>
+                            </div>
+                            <div class="media-content has-text-right">
+                                <div class="content">
+                                    {{{invite.inviteNote}}}
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+
+    <script>
+        designChild.init({
+            callbackAfterProcessing: function () {
+                $(document).ready(function () {
+                    $('#designWrap').fullpage({
+                        sectionsColor: ['#F15A5A', '#F0C419', '#4EBA6F', '#2D95BF', '#955BA5']
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

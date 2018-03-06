@@ -115,19 +115,31 @@
     }
 
     var requestProcessingTemplate = function (templateHtml) {
-        window.parent.postMessage({
-            "messageId": "template",
-            "details": {
-                "content": templateHtml,
-                "framework": "mustache"
-            }
-        }, (settings.parentUrl || getParentUrl()));
+        if (inIframe()) {
+            window.parent.postMessage({
+                "messageId": "template",
+                "details": {
+                    "content": templateHtml,
+                    "framework": "mustache"
+                }
+            }, (settings.parentUrl || getParentUrl()));
+        } else {
+            designChild.onTemplateComplete(templateHtml);
+        }
     }
 
     var sayTemplateApplied = function () {
         window.parent.postMessage({
             "messageId": "templateApplied"
         }, (settings.parentUrl || getParentUrl()));
+    }
+
+    var inIframe = function () {
+        try {
+            return window.self !== window.top;
+        } catch (e) {
+            return true;
+        }
     }
     //////////////////////////////
     // Public APIs

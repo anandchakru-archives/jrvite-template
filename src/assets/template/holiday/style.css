@@ -1,0 +1,47 @@
+.jumbotron{
+    background-color:transparent !important;
+  }
+.container{
+    background-color: #a52a2a;
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    box-shadow: 0 0 0 1px #E27D60, 1px 1px 6px 4px #727272;
+    border-radius: 50px 0 50px 0;
+    display: none;
+}
+#title{
+    color: #561010;
+    font-family: 'Berkshire Swash';
+}
+#hostName{
+    color: #561010;
+    font-family: 'Berkshire Swash';
+}
+p, span, #inviteNote, #inviteNote *{
+    color: #ffffff;
+}
+.spacer{
+    padding: 25px 0;
+}
+
+.art:before{
+    content: ' ';
+    border: 1px solid #fff;
+    height: 100px;
+    position: relative;
+    top: -115px;
+    display: inline-table;
+}
+.art {
+    margin-top: 90px;
+    width:50px;
+    height:50px;
+    background-color:rgb(255, 255, 255);
+    border-radius:50%;
+    display: inline-block;
+    transition: margin 500ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+}
+.art:nth-child(odd){
+    background-color:#561010;
+    position: relative;
+    top: -70px;
+}

@@ -1,0 +1,38 @@
+body{
+    padding: 10px;
+}
+.container{
+    background-color: #0A0B0C;
+    box-shadow: 0 0 0 1px #a52a2a, 1px 1px 6px 4px #727272;
+    padding: 10px;
+    background-image: radial-gradient(#fff, #ffffff1a 2px, transparent 20px),
+    radial-gradient(#fff, #ffffff26 1px, transparent 10px),
+    radial-gradient(#fff, #ffffff1a 2px, transparent 15px),
+    radial-gradient(rgba(255,255,255,.4), #ffffff1a 2px, transparent 5px);
+    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
+    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+}
+.icon{
+    fill: white;
+}
+#title{
+    font-family: Montserrat;
+    color: #66FCFC;
+}
+#hostName{
+    font-family: 'Walter Turncoat';
+    color: #ccc;
+}
+p, span, #inviteNote, #inviteNote p{
+    color: #45A29E;
+    font-size: 18px;
+}
+.spacer{
+    padding: 25px 0;
+}
+.jumbotron{
+  background-color:transparent !important;
+}
+p, span, #inviteNote, #inviteNote *{
+  font-family: Comfortaa;
+}
