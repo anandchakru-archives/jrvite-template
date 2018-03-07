@@ -8,7 +8,7 @@ body{
     background: linear-gradient(#ffffff 50%, rgba(255,255,255,0) 0) 0 0,
     radial-gradient(circle closest-side, #FFFFFF 53%, rgba(255,255,255,0) 0) 0 0,
     radial-gradient(circle closest-side, #FFFFFF 50%, rgba(255,255,255,0) 0) 55px 0 #E27D60;
-    background-size:110px 400px;
+    background-size:110px 650px;
     background-repeat:repeat-x;
     box-shadow: 0 0 0 1px #E27D60, 1px 1px 6px 4px #727272;
 }
