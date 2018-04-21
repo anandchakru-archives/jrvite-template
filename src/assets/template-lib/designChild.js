@@ -217,6 +217,8 @@
         app.style.opacity = '1';
         app.style.display = 'block';
         app.innerHTML = html;
+        document.activeElement.blur();
+        app.focus();
         sayTemplateApplied();
         settings.callbackAfterProcessing(html);
     }
